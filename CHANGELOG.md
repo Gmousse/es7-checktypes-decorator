@@ -10,5 +10,7 @@
 
 **Changes**:
 - Init the repo
+- Adding tests
+- The project is working correctly
 
 ---
