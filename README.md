@@ -14,6 +14,11 @@ then: `npm i --save-dev es7-checktypes-decorator`
 
 ### Usage
 
+First, require the decorator:
+````js
+import { checktypes } from 'es7-checktypes-decorator';
+````
+
 The decorator will control if your arguments have the good type and / or are an instance of a Class.
 
 You have simply to call the decorator before a method or a class. Like that:
@@ -33,7 +38,8 @@ class Class_expecting_Number_type_and_CustomClass_instance {
     @checktypes(['String', CustomClass], ['Number', 'String'])
     // This method expects to receive arg1 as String or CustomClass instance
     // and arg2 as Number or String.
-    method_expecting_String_type_or_CustomClass_and_Number_type_or_String_type(arg1, arg2) {} }
+    method_expecting_String_type_or_CustomClass_and_Number_type_or_String_type(arg1, arg2) {}
+}
 
 ````
 
