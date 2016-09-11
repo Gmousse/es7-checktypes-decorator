@@ -1,0 +1,61 @@
+{
+  "name": "es7-checktypes-decorator",
+  "version": "0.1.0",
+  "description": "An es7 decorator used to validate class and methods arguments.",
+  "keywords": [
+      "es7",
+      "decorator",
+      "types",
+      "instance",
+      "typeof",
+      "instanceof",
+      "class",
+      "method"
+  ],
+  "homepage": "https://github.com/Gmousse/",
+  "bugs": "https://github.com/Gmousse/es7-checktypes-decorator/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gmousse/es7-checktypes-decorator.git"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "NODE_ENV=production babel-tape-runner 'tests/*-test.js' | tap-diff",
+    "lint": "eslint -c .eslintrc ./src",
+    "build": "NODE_ENV=production babel src/ -d lib/",
+    "check": "npm run lint && npm run test",
+    "prepare": "npm run check && npm run build",
+    "git": "npm run prepare && git add . && git commit",
+    "prepublish": "npm run prepare"
+  },
+  "author": {
+    "name": "Guillaume Mousnier",
+    "email": "mousnier.guillaume@gmail.com",
+    "url": "https://twitter.com/DatMousse"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.3.15",
+    "babel-core": "^6.3.15",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-decorators": "^6.13.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-minify": "0.0.0",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-runtime": "^6.9.2",
+    "babel-tape-runner": "^2.0.1",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^2.1.1",
+    "eslint-plugin-react": "^5.1.1",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.5.1",
+    "uglifyjs": "^2.4.10",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0"
+  }
+}
