@@ -1,12 +1,12 @@
 {
   "name": "es7-checktypes-decorator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An es7 decorator used to validate class and methods arguments.",
   "keywords": [
       "es7",
       "decorator",
       "types",
-      "instance",
+      "instcdance",
       "typeof",
       "instanceof",
       "class",
