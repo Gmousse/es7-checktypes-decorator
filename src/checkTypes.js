@@ -27,7 +27,7 @@ function checkArgType(arg, argName, expectedTypes) {
     }
 }
 
-function checkArgumentsTypes(Func, types) {
+function checkArgumentsTypes(Func, types, isClass = false) {
     const argNames = getArgumentsNames(Func);
     return (...args) => {
         args.forEach((arg, index) => {
@@ -35,7 +35,10 @@ function checkArgumentsTypes(Func, types) {
                 checkArgType(arg, argNames[index], Array.isArray(types[index]) ? types[index] : [types[index]]);
             }
         });
-        return new Func(...args); // tricky part
+        if (isClass) {
+            return new Func(...args); // tricky part
+        }
+        return Func.call(this, ...args);
     };
 }
 
@@ -62,7 +65,7 @@ function checkArgumentsTypes(Func, types) {
 export default function checktypes(...types) {
     return (target, name, descriptor) => {
         if (!name && !descriptor) {
-            return checkArgumentsTypes(target, types);
+            return checkArgumentsTypes(target, types, true);
         }
         return {
             configurable: true,

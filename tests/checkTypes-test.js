@@ -71,6 +71,12 @@ test('checktypes can ', (assert) => {
     );
 
     assert.equal(
+        letsGoToTheParty.money,
+        5,
+        'control method arguments and do nothing is everything is ok, keeping context (this).'
+    );
+
+    assert.equal(
         tryCatch(() => letsGoToTheParty.onTheRoadAgain(NaN, 'SO BAD...')).name,
         'TypeError',
         'control method arguments and throw a TypeError if types are wrong.'
