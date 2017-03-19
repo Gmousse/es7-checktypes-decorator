@@ -1,5 +1,5 @@
 # es7-checktypes-decorator
-**v0.1.6**
+**v0.1.7**
 
 A simple es7 decorator to control your class and methods arguments types or instances.
 If the decorator detects an anomaly, it will throw a `TypeError` with a message showing the wrong argument.
