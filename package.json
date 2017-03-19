@@ -1,6 +1,6 @@
 {
   "name": "es7-checktypes-decorator",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "An es7 decorator used to validate class and methods arguments.",
   "keywords": [
       "es7",
@@ -57,5 +57,8 @@
     "tape": "^4.5.1",
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0"
   }
 }
