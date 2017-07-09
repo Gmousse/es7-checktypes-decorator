@@ -2,6 +2,17 @@
 
 ---
 
+## v0.2.0
+
+**Author**: Guillaume Mousnier
+
+**Type**: Release
+
+**Changes**:
+- CheckTypes now correctly handle null, undefined and some Primitive types.
+
+---
+
 ## v0.1.8
 
 **Author**: Guillaume Mousnier

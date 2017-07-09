@@ -1,8 +1,21 @@
+
+function isNull(arg) {
+    return arg === null;
+}
+
 class ArgumentTypeError extends TypeError {
     constructor(arg, argName, supportedTypes) {
         super(TypeError);
+        const argType = (() => {
+            try {
+                if (isNull(arg)) return 'null';
+                return `${typeof arg}${arg.constructor ? ` | ${arg.constructor.name}` : ''}`;
+            } catch (e) {
+                return `${typeof arg}`;
+            }
+        })();
         this.message = `${argName} expected as one of [${supportedTypes.join(', ')}], ` +
-            `not as a ${typeof arg}${arg.constructor ? ` | ${arg.constructor.name}` : ''}.`;
+            `not as a ${argType}.`;
         this.name = 'ArgumentTypeError';
     }
 }
@@ -15,11 +28,21 @@ function getArgumentsNames(Func) {
 }
 
 function isOfType(variable, type) {
-    return (typeof type === 'string') ? (
-        (variable.constructor && variable.constructor.name === type) || (typeof variable === type.toLowerCase())
-    ) : (
-        variable instanceof type
-    );
+    try {
+        if (typeof type === 'string') {
+            if (type.toLowerCase() === 'null') {
+                return isNull(variable);
+            }
+            return (typeof variable === type.toLowerCase()) ||
+                (variable.constructor && variable.constructor.name === type);
+        }
+        if (isNull(type)) {
+            return isNull(variable);
+        }
+        return variable instanceof type;
+    } catch (e) {
+        return false;
+    }
 }
 
 function checkArgType(arg, argName, expectedTypes) {
