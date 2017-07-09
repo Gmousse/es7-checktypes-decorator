@@ -101,6 +101,24 @@ test('checktypes can ', (assert) => {
     );
 
     assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain(undefined, 'SO BAD...')).name,
+        'ArgumentTypeError',
+        'control method arguments and throw a ArgumentTypeError if types are wrong and undefined...'
+    );
+
+    assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain()).name,
+        'ArgumentTypeError',
+        'control method arguments and throw a ArgumentTypeError if arguments are missing.'
+    );
+
+    assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain()).message,
+        'starting expected as one of [String], not as a undefined.',
+        'control method arguments and throw a ArgumentTypeError if arguments are missing with the appropriate message.'
+    );
+
+    assert.equal(
         tryCatch(() => letsGoToTheParty.bornInTheUSA('LET\'S SWING BABY', new SpecialEnding())),
         undefined,
         'control arguments in a range of types and do nothing is everything is ok.'
