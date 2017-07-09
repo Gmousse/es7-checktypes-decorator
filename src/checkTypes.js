@@ -54,10 +54,8 @@ function checkArgType(arg, argName, expectedTypes) {
 function checkArgumentsTypes(Func, types, isClass = false) {
     const argNames = getArgumentsNames(Func);
     return (...args) => {
-        args.forEach((arg, index) => {
-            if (types[index]) {
-                checkArgType(arg, argNames[index], Array.isArray(types[index]) ? types[index] : [types[index]]);
-            }
+        types.forEach((type, index) => {
+            checkArgType(args[index], argNames[index], Array.isArray(type) ? type : [type]);
         });
         if (isClass) {
             return new Func(...args); // tricky part
