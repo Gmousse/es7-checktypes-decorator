@@ -77,9 +77,27 @@ test('checktypes can ', (assert) => {
     );
 
     assert.equal(
-        tryCatch(() => letsGoToTheParty.onTheRoadAgain(NaN, 'SO BAD...')).name,
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain([1, 2], 'SO BAD...')).name,
         'ArgumentTypeError',
-        'control method arguments and throw a TypeError if types are wrong.'
+        'control method arguments and throw a ArgumentTypeError if types are wrong.'
+    );
+
+    assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain([1, 2], 'SO BAD...')).message,
+        'starting expected as one of [String], not as a object | Array.',
+        'control method arguments and throw a ArgumentTypeError if types are wrong with the appropriate message.'
+    );
+
+    assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain(null, 'SO BAD...')).name,
+        'ArgumentTypeError',
+        'control method arguments and throw a ArgumentTypeError if types are wrong and null...'
+    );
+
+    assert.equal(
+        tryCatch(() => letsGoToTheParty.onTheRoadAgain(null, 'SO BAD...')).message,
+        'starting expected as one of [String], not as a null.',
+        'control method arguments and throw a ArgumentTypeError if types are wrong and null with the appropriate message.'
     );
 
     assert.equal(
@@ -91,13 +109,13 @@ test('checktypes can ', (assert) => {
     assert.equal(
         tryCatch(() => letsGoToTheParty.bornInTheUSA('DAMN GUYS !', () => {})).name,
         'ArgumentTypeError',
-        'control arguments in a range of types and throw a TypeError if each type is wrong.'
+        'control arguments in a range of types and throw a ArgumentTypeError if each type is wrong.'
     );
 
     assert.equal(
         tryCatch(() => letsGoToTheParty.bornInTheUSA(42, () => {})).message,
         'starting expected as one of [String, undefined], not as a number | Number.',
-        'control arguments in a range of types and throw a TypeError if each type is wrong with the appropriate message.'
+        'control arguments in a range of types and throw a ArgumentTypeError if each type is wrong with the appropriate message.'
     );
 
     assert.end();
