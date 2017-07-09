@@ -2,6 +2,17 @@
 
 ---
 
+## v0.2.1
+
+**Author**: Guillaume Mousnier
+
+**Type**: Hotfix
+
+**Changes**:
+- CheckTypes now correctly handle missing values.
+
+---
+
 ## v0.2.0
 
 **Author**: Guillaume Mousnier
@@ -17,7 +28,7 @@
 
 **Author**: Guillaume Mousnier
 
-**Type**: Release
+**Type**: Hotfix
 
 **Changes**:
 - Error messages are now displayed correctly.
