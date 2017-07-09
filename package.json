@@ -1,16 +1,16 @@
 {
   "name": "es7-checktypes-decorator",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "An es7 decorator used to validate class and methods arguments.",
   "keywords": [
-      "es7",
-      "decorator",
-      "types",
-      "instcdance",
-      "typeof",
-      "instanceof",
-      "class",
-      "method"
+    "es7",
+    "decorator",
+    "types",
+    "instcdance",
+    "typeof",
+    "instanceof",
+    "class",
+    "method"
   ],
   "homepage": "https://github.com/Gmousse/",
   "bugs": "https://github.com/Gmousse/es7-checktypes-decorator/issues",
@@ -22,9 +22,8 @@
   "scripts": {
     "test": "NODE_ENV=production babel-tape-runner 'tests/*-test.js' | tap-diff",
     "lint": "eslint -c .eslintrc ./src",
-    "build": "NODE_ENV=production babel src/ -d lib/",
-    "checkes3": "check-es3-syntax lib/ --kill --print",
     "build": "npm run build:commonjs",
+    "checkes3": "check-es3-syntax lib/ --kill --print",
     "build:commonjs": "NODE_ENV=production babel  src/ -d lib/ --no-comments",
     "prepublish": "npm run lint && npm run test && npm run build && npm run checkes3"
   },
