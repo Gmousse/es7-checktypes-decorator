@@ -1,5 +1,5 @@
 # es7-checktypes-decorator
-**v0.1.7**
+**v0.1.8**
 
 A simple es7 decorator to control your class and methods arguments types or instances.
 If the decorator detects an anomaly, it will throw a `TypeError` with a message showing the wrong argument.
@@ -45,4 +45,4 @@ class Class_expecting_Number_type_and_CustomClass_instance {
 
 If the validation is ok, your class or your methods will be executed as always.
 
-If the validation is wrong, the decorator will throw a `TypeError` with a custom message.
+If the validation is wrong, the decorator will throw a `ArgumentTypeError` (inherited from TypeError) with a custom message.
