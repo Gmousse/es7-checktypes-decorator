@@ -53,7 +53,7 @@ test('checktypes can ', (assert) => {
 
     assert.equal(
         tryCatch(() => new Jukebox('yo')).name,
-        'TypeError',
+        'ArgumentTypeError',
         'control class arguments and throw a TypeError is the types are wrong.'
     );
 
@@ -78,7 +78,7 @@ test('checktypes can ', (assert) => {
 
     assert.equal(
         tryCatch(() => letsGoToTheParty.onTheRoadAgain(NaN, 'SO BAD...')).name,
-        'TypeError',
+        'ArgumentTypeError',
         'control method arguments and throw a TypeError if types are wrong.'
     );
 
@@ -90,7 +90,7 @@ test('checktypes can ', (assert) => {
 
     assert.equal(
         tryCatch(() => letsGoToTheParty.bornInTheUSA('DAMN GUYS !', () => {})).name,
-        'TypeError',
+        'ArgumentTypeError',
         'control arguments in a range of types and throw a TypeError if each type is wrong.'
     );
 

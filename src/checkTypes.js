@@ -1,8 +1,9 @@
 class ArgumentTypeError extends TypeError {
     constructor(arg, argName, supportedTypes) {
-        super();
+        super(TypeError);
         this.message = `${argName} expected as one of [${supportedTypes.join(', ')}], ` +
             `not as a ${typeof arg}${arg.constructor ? ` | ${arg.constructor.name}` : ''}.`;
+        this.name = 'ArgumentTypeError';
     }
 }
 
