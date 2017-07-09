@@ -2,7 +2,7 @@
 **v0.1.8**
 
 A simple es7 decorator to control your class and methods arguments types or instances.
-If the decorator detects an anomaly, it will throw a `TypeError` with a message showing the wrong argument.
+If the decorator detects an anomaly, it will throw a `ArgumentTypeError` with a message showing the wrong argument.
 
 ### Installation
 
