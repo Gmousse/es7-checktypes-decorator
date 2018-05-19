@@ -1,4 +1,7 @@
 # es7-checktypes-decorator
+
+ [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 **v0.2.1**
 
 A simple es7 decorator to control your class and methods arguments types or instances.
